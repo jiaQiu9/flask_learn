@@ -10,9 +10,7 @@
     <!-- Bootstrap CSS, make the page look better and formated -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- name of the tab -->
-    <title>Home Page</title>
-    
-
+    <title>Market Page</title>
   </head>
   <body>
       <!-- navigation bar -->
@@ -43,7 +41,36 @@
         </div>
       </nav>
 
-    <h1>Home Page</h1>
+    <h1>Market Page</h1>
+    <!-- <p>{{ items }}</p> -->
+    <table class="table table-hover table-dark">
+      <thead>
+          <tr>
+              <!-- Your Columns HERE -->
+              <th scope="col">ID</th>
+              <th scope="col">Name</th>
+              <th scope="col">Barcode</th>
+              <th scope="col">Price</th>
+              <th scope="col">Options</th>
+          </tr>
+      </thead>
+      <tbody>
+          <!-- Your rows inside the table HERE: -->
+          {% for item in items %}
+              <tr>
+                  <td>{{ item.id }}</td>
+                  <td>{{ item.name }}</td>
+                  <td>{{ item.barcode }}</td>
+                  <td>{{ item.price }}$</td>
+                  <td>
+                      <button class="btn btn-outline btn-info">More Info</button>
+                      <button class="btn btn-outline btn-success">Purchase this Item</button>
+                  </td>
+              </tr>
+          {% endfor %}
+      </tbody>
+  </table>
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS 
